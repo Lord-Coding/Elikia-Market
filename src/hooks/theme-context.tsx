@@ -3,7 +3,7 @@ import { useColorScheme } from "react-native";
 
 import { Colors, Theme } from "@/constants/theme";
 
-const ThemeContext = createContext<Theme>(Colors.dark);
+export const ThemeContext = createContext<Theme>(Colors.dark);
 
 export function useAppTheme(): Theme {
   return useContext(ThemeContext);

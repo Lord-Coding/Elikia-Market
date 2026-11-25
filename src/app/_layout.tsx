@@ -1,10 +1,10 @@
-import * as SplashScreen from 'expo-splash-screen';
-import { StatusBar } from "expo-status-bar"
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import { ThemeProvider } from '@/context/theme-context';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { Stack } from 'expo-router';
-import { useTheme } from '@/hooks/use-theme';
+import { AnimatedSplashOverlay } from "@/components/animated-icon";
+import { ThemeProvider } from "@/hooks/theme-context";
+import { useTheme } from "@/hooks/use-theme";
+import { Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -19,7 +19,7 @@ export default function App() {
 }
 
 const RootNavigation = () => {
-  const theme = useTheme()
+  const theme = useTheme();
 
   return (
     <SafeAreaProvider>
@@ -27,17 +27,17 @@ const RootNavigation = () => {
         screenOptions={{
           headerShown: false,
           contentStyle: {
-            backgroundColor: theme.background
+            backgroundColor: theme.background,
           },
         }}
       >
         <Stack.Screen
           name="(tabs)"
           options={{
-            headerShown: false
+            headerShown: false,
           }}
         />
       </Stack>
     </SafeAreaProvider>
-  )
-}
+  );
+};
