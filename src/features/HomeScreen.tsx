@@ -32,7 +32,7 @@ export default function HomeScreen() {
           />
           <View style={styles.bannerShade} />
           <View style={styles.bannerContent}>
-            <Text style={styles.bannerEyebrow}>LES SAVEURS DU TERROIR</Text>
+            <Text style={styles.bannerEyebrow}>LES SAVEURS DU TIRROIR</Text>
             <Text style={styles.bannerTitle}>Le goût de{ '\n' }chez nous.</Text>
             <Text style={styles.bannerText}>Des produits naturels sélectionnés avec soin.</Text>
             <Pressable style={styles.bannerButton}>
@@ -64,7 +64,7 @@ export default function HomeScreen() {
           </View>
         </View>
 
-        <View style={{ height: 100 }}/>
+        <View style={{ height: 120 }}/>
       </ScrollView>
     </ScreenContainer>
   )

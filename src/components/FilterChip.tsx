@@ -12,17 +12,19 @@ export default function FilterChip(
     const theme = useTheme()
     
     return (
-        <Pressable onPress={onPress} style={[styles.chip, {backgroundColor: theme.white}, selected && {backgroundColor: theme.secondary}]}>
-            <Text style={[styles.label, {color: theme.text}, selected && {backgroundColor: theme.white}]}>{label}</Text>
+        <Pressable onPress={onPress} style={[styles.chip, {backgroundColor: theme.inactive}, selected && {backgroundColor: theme.secondary}]}>
+            <Text style={[styles.label, {color: theme.text}, selected && {color: theme.white}]}>{label}</Text>
         </Pressable>
     )
 }
 
 const styles = StyleSheet.create({
     chip: {
+        height: 34,
         borderRadius: 99,
         paddingHorizontal: 14,
-        paddingVertical: 8,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     label: {
         fontSize: 12,

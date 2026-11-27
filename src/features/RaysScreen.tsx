@@ -43,17 +43,12 @@ export default function RaysScreen() {
           />
         </View>
         <View style={styles.heading}>
-          <Text style={[styles.eyebrow, {color: theme.primary}]}>CATALOGUE</Text>
-          <Text style={[styles.title, {color: theme.text}]}>Explorez nos rayons</Text>
+          <Text style={[styles.title, {color: theme.primary}]}>Explorez nos rayons</Text>
           <Text style={[styles.subtitle, {color: theme.textSecondary}]}>
             Des saveurs et produits choisis pour vous.
           </Text>
         </View>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.filters}
-        >
+        <View style={styles.filters}>
           {filters.map((f) => (
             <FilterChip
               key={f}
@@ -62,7 +57,7 @@ export default function RaysScreen() {
               onPress={() => setSelected(f)}
             />
           ))}
-        </ScrollView>
+        </View>
         <View style={styles.products}>
           <SectionTitle title={`${filtered.length} produits`} />
           <View style={styles.grid}>
@@ -71,6 +66,8 @@ export default function RaysScreen() {
             ))}
           </View>
         </View>
+
+        <View style={{ height: 120 }}/>
       </ScrollView>
     </ScreenContainer>
   );
@@ -91,11 +88,6 @@ const styles = StyleSheet.create({
     marginTop: 12,
     marginBottom: 18,
   },
-  eyebrow: {
-    fontSize: 10,
-    letterSpacing: 1.2,
-    fontWeight: "800",
-  },
   title: {
     fontSize: 24,
     fontWeight: "900",
@@ -106,6 +98,9 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   filters: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
     gap: 8,
     paddingBottom: 4,
   },
